@@ -1,5 +1,8 @@
 #주석
 akumamemcho.gif
+job.md
+job/
+.gitignore
 
 # Compiled class file
 *.class
