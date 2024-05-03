@@ -1,4 +1,62 @@
 # 김민준 202130203
+## 5월 3일
+**컬렉션**  
+요소라 불리는 가변 개수의 객체들의 저장소. = 배열과 비슷.  
+컬렉션은 제너릭 기법으로 구현.  
+▶제너릭 : 특정타입만을 다루지 않고, 여러 종류의 타입으로 변할 수 있도록 클래스나 메소드를 일반화 시키는 기법. (<구체적인 타입을 명시.>)  
+<code> Vector<Integer> v = new Vector<Integer>(); </code>  
+
+*벡터 Vector<특정타입>의 특성*  
+ㆍ배열의 길이 제한 극복
+ㆍ요소의 개수가 많아지면 자동 조절.
+ㆍVector에 객체 삽입, 삭제 가능. (맨 뒤든 중간이든 삽입, 삭제 가능.)
+```
+Vector<Integer> v = new Vector<Integer>(5); ← 벡터 생성, 용량 5
+v.add(5); ← 삽입  
+v.add(-4);  
+int n=v.size(); ← 요소 개수 n  
+int c=v.capacity(); ← 벡터 용량 c  
+v.add(1,100); ← 중간에 넣기  
+Integer obj=v.get(1); ← 요소 얻기  
+int i=obj.intValue(); ← 요소 얻은거 i에 넣기  
+v.remove(1); ← 요소 지우기  
+int last=v.lastElement(); ← 마지막 요소  
+v.removeAllElements(); ← 모든 요소 지우기
+```
+Test.java에 연습을 해보았다. 자세한 내용은 **Test.java** 참조.  
+
+▶ ArrayList<특정타입> ← 벡터와 거의 동일.  
+
+**Iterator**  
+Iterator<특정타입> 인터페이스
+    └리스트 구조의 컬렉션에서 요소의 순차 검색을 위한 인터페이스.  
+
+**HashMap**  
+키(Key)와 값(Value)의 쌍으로 구성되는 요소를 다루는 컬렉션.  
+<code>HashMap<특정타입, 특정타입></code>  
+```
+HashMap<String, String> h = new HashMap<String, String>(); ← 해시맵 생성
+h.put("apple","사과"); ← apple 키와 사과 값의 쌍을 해시맵에 삽입
+String kor = h.get("apple"); ← apple 키로 값을 검색함. kor에 값인 사과가 들어감.
+```
+
+**자바의 GUI**  
+GUI : 사용자가 편리하게 입출력할 수 있도록 그래픽으로 화면 구성하고, 마우스나 키보드로 입력받을 수 있도록 하는 사용자 인터페이스.  
+
+**Swing**  
+자바의 GUI.
+▶*컨테이너* : 다른 컴포넌트를 포함할 수 있는 GUI 컴포넌트.  
+▶*컴포넌트* : 컨테이너에 포함되어야 화면에 출력될 수 있는 GUI 객체.  
+▶*최상위 컨테이너* : 다른 컨테이너에 포함 안돼도 화면 출력 가능. (JFrame, JDialog, JApplet)  
+※최상위 컨테이너를 바닥에 깔고, 그 위에 컨테이너를 놓고, 다시 컴포넌트를 쌓아가는 방식. 이것이 GUI 프로그램의 작성 방식이다!!  
+
+**Swing Frame**  
+ㆍJFrame 클래스를 상속받은 클래스 작성.  
+ㆍ프레임 크기 반드시 지정 : setSize() 호출  
+ㆍ프레임을 화면에 출력하는 코드 반드시 필요 : setVisible(True) 호출.  
+※ main() 은 스윙프레임을 생성하는 정도의 코드로 최소화.
+[super()나 setTitle()로 타이틀 달기] > [컨텐트팬에 컴포넌트 달기] > [컨텐트팬 알아내기] > [컨텐트팬 변경]
+
 ## 4월19일
 **메소드 오버라이딩 (Method Overriding)**  
 ▶서브클래스에서 슈퍼클래스의 메소드 중복 작성.(메소드 무시하기)  

@@ -1,3 +1,63 @@
+/*컬렉션 Iterator 메소드 연습.
+import java.util.*;
+public class Test {
+    public static void main(String[] args) { 
+    Vector<Integer> v = new Vector<Integer>(); 
+        v.add(5);
+        v.add(4);
+        v.add(-1);
+        v.add(2, 100);
+
+    Iterator<Integer> it = v.iterator(); 
+
+    while(it.hasNext()) {
+        int n = it.next();
+        System.out.println(n);
+        }
+
+    int sum = 0;
+    it = v.iterator();
+
+    while(it.hasNext()) {
+        int n = it.next();
+        sum += n; 
+        }
+
+    System.out.println("벡터 정수 합 : " + sum);
+    }
+}
+
+
+/* 컬렉션 벡터 연습
+import java.util.Vector;
+public class Test {
+public static void main(String[] args) {
+    Vector<Integer> v = new Vector<Integer>();
+        v.add(5);
+        v.add(4);
+        v.add(-1);
+
+        v.add(2, 100);
+
+    System.out.println("벡터 안의 요소 수 : " + v.size()); 
+    System.out.println("벡터의 용량 : " + v.capacity()); 
+    
+    for(int i=0; i<v.size(); i++) {
+        int n = v.get(i);
+        System.out.println(n);
+    }
+
+    int sum = 0;
+    for(int i=0; i<v.size(); i++) {
+        int n = v.elementAt(i);
+        sum += n;
+    }
+    System.out.println("벡터 안의 정수 합 : " + sum);
+    }
+}
+
+
+/* super활용 colorpoint 연습
 class Point {
     private int x, y;
     public Point() {
@@ -31,7 +91,8 @@ public class Test {
 }
         
 
-/*class Point {
+/* this 색깔 연습.
+class Point {
     private int x, y;
     public void set(int x, int y) {
         this.x = x;
@@ -110,7 +171,8 @@ class Circle {
     }
     }
 
-/*public class Test {
+/* this 책이름 연습
+public class Test {
     String title;
     String author;
     void show() { System.out.println(title + " " + author); }
@@ -134,7 +196,8 @@ class Circle {
     }
 }
 
-/*public class Test {
+/* 책이름 연습
+public class Test {
     String title;
     String author;
 
@@ -154,7 +217,8 @@ class Circle {
     
 }
 
-/*public class Test {
+/* 자바피자 자바도넛 연습
+public class Test {
     int radius;
     String name;
 
@@ -180,7 +244,8 @@ class Circle {
     }
 }
 
-/*import java.util.Scanner;
+/* get연습
+import java.util.Scanner;
 
     public class Test {
         public static void main(String[] args) {
@@ -202,7 +267,8 @@ class Circle {
         }
     }
 
-/*import java.util.Scanner;
+/* 나눔수 나뉨수 연습
+import java.util.Scanner;
 public class Test {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -227,7 +293,8 @@ public class Test {
 }
 
 
-/* public class Test {
+/*
+ public class Test {
 	public static void main(String[] args) {
 		for(int i=1; i<10; i++) {
 			for(int j=1; j<10; j++) {
@@ -240,7 +307,8 @@ public class Test {
 }
 
 
-/* import java.util.Scanner;
+/* if문 연습
+import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
