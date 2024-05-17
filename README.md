@@ -1,4 +1,50 @@
 # 김민준 202130203
+## 5월 17일
+
+**배치 관리자**
+ㆍ*FlowLayout 배치관리자*  
+    └컴포넌트가 삽입되는 순서대로 왼쪽에서 오른쪽으로 배치. 다 차면 아래로 내려와 반복.  
+ㆍ*BorderLayout 배치관리자*  
+    └컨테이너 공간을 동서남북,중앙 5개로 나눈 후 응용프로그램에서 지정한 영역에 컴포넌트 배치.  
+ㆍ*GridLayout 배치관리자*  
+    └컨테이너를 프로그램에서 설정한 동일한 크기의 2차원 격자로 나눔. 좌에서 우로, 위에서 아래로 배치.  
+ㆍ*CardLayout*  
+    └컨테이너의 공간에 카드를 쌓아 놓은 듯이 컴포넌트를 포개어 배치.
+
+<code>setLayout(LayoutManager lm) // lm을 새로운 배치관리자로 설정.</code>  
+
+**FlowLayout 생성**
+```
+container.setLayout(new FlowLayout()); // FlowLayout으로 생성.
+container.add(new JButton("add")); // 버튼을 계속 만든다.
+container.add(new JButton("sub"));
+container.add(new JButton("mul"));
+container.add(new JButton("div"));
+container.add(new JButton("Calculate"));
+```
+
+<code>FlowLayout(컴포넌트 정렬 기준, 컴포넌트 간의 가로 간격, 컴포넌트 간의 세로 간격)</code>  
+
+**BorderLayout 생성**  
+```
+contentPane.setLayout(new BorderLayout(30, 20));
+contentPane.add(new JButton("Calculate"), BorderLayout.CENTER);
+contentPane.add(new JButton("add"), BorderLayout.NORTH);
+contentPane.add(new JButton("sub"), BorderLayout.SOUTH);
+contentPane.add(new JButton("mul"), BorderLayout.EAST);
+contentPane.add(new JButton("div"), BorderLayout.WEST);
+```
+
+<code>BorderLayout(컴포넌트 간의 가로 간격, 컴포넌트 간의 세로 간격)</code>  
+<code>void add(컴포넌트 , BorderLayout.위치)</code>  
+※위치에 EAST, WEST, SOUTH, NORTH, CENTER 를 넣을 수 있다.  
+
+**GridLayout 생성**  
+```
+GridLayout(격자의 행수, 격자의 열수, 컴포넌트 좌우간격, 컴포넌트 상하간격)
+```
+
+
 ## 5월 3일
 **컬렉션**  
 요소라 불리는 가변 개수의 객체들의 저장소. = 배열과 비슷.  
