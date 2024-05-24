@@ -1,4 +1,58 @@
 # 김민준 202130203
+## 5월 24일
+**이벤트 기반 프로그래밍**  
+ㆍ이벤트가 발생하면 이벤트를 처리하는 루틴 실행.  
+ㆍ실행될 코드는 사용자가 관여한 이벤트의 발생에 의해 전적으로 결정.  
+
+※배치실행 : 프로그램의 개발자가 프로그램의 흐름을 결정하는 방식.(반대되는 개념.)  
+
+「이벤트 종류」  
+- 사용자의 입력 : 마우스 드래그, 클릭, 키보드 누름 등  
+- 센서로부터 입력, 네트워크로부터 데이터 송수신  
+- 다른 응용프로그램이나 다른 스레드로부터의 메세지  
+
+「이벤트 객체」  
+▶발생한 이벤트에 관한 정보를 가진 개체. > 이벤트 리스너에 전달됨.  
+```
+class MyActionListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) { // 버튼이 클릭될 때 호출되는 메소드
+        JButton b = (JButton)e.getSource(); // 사용자가 클릭한 버튼 알아내기
+        if(b.getText().equals("Action")) // 버튼의 문자열이 "Action"인지 비교
+            b.setText("액션"); // JButton의 setText() 호출. 문자열변경
+        else
+            b.setText("Action"); // JButton의 setText() 호출. 문자열변경
+    }
+}
+```
+
+```
+MyActionListener listener = new MyActionListener(); // 리스너 인스턴스 생성
+btn.addActionListener(listener); //리스너 등록. Action 자리는 이벤트 명.
+```  
+**Key 이벤트와 포커스**  
+ㆍ키 입력 시, 다음 세 경우 각각 Key 이벤트 발생.  
+   └키를 누르는 순간  
+   └누른 키를 떼는 순간  
+   └누른 키를 떼는 순간(unicode키의 경우에만)  
+ㆍ키 이벤트를 받을 수 있는 조건  
+   └모든 컴포넌트  
+   └현재 포커스를 가진 컴포넌트가 키 이벤트 독점  
+ㆍ포커스  
+   └컴포넌트나 응용프로그램이 키 이벤트를 독점하는 권한  
+   └컴포넌트에 포커스 설정 방법 : 다음 2 라인 코드 필요  
+
+「KeyEvent 객체의 메소드로 입력된 키 판별」
+ㆍ키의 유니코드 문자 값 리턴
+ㆍ유니코드 문자 키인 경우에만 의미 있음
+ㆍ입력된 키를 판별하기 위해 문자 값과 비교하면 됨
+```
+public void keyPressed(KeyEvent e) {
+    if(e.getKeyChar() == 'q')
+        System.exit(0);
+} // q키 누르면 프로그램 종료.
+```
+
+
 ## 5월 17일
 
 **배치 관리자**  
