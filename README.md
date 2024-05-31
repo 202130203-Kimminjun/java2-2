@@ -1,4 +1,17 @@
 # 김민준 202130203
+## 5월 31일  
+**JComponent**  
+void setForeground(color) // 전경색 설정  
+void setBackground(color) // 배경색 설정  
+void setOpaque(boolean) // 불투명성 설정  
+void setFont(Font) // 폰트 설정  
+Font getFont() // 폰트 리턴  
+
+JBUTTON으로 버튼을 생성 후 이미지를 추가하여 버튼에 마우스를 가져다 댔을 때와 클릭 시의 이미지를 바꿔보았다.  
+
+JRadioButton으로 라디오버튼을 만들어보았다.  
+```ButtonGroup g = new ButtonGroup(); // 버튼 그룹 객체 생성.```  
+
 ## 5월 24일
 **이벤트 기반 프로그래밍**  
 ㆍ이벤트가 발생하면 이벤트를 처리하는 루틴 실행.  
